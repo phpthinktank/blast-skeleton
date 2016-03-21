@@ -7,14 +7,16 @@
  * file that was distributed with this source code.
  *
  * Date: 21.03.2016
- * Time: 14:38
+ * Time: 14:54
  *
  */
 
-namespace WebAppExample;
+return [
+    'provider' => [
+        \WebAppExample\Provider\AppService::class,
+        \WebAppExample\Provider\PostService::class
+    ],
+    'app' => [
 
-
-class AppService
-{
-
-}
+    ]
+];

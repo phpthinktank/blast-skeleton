@@ -10,3 +10,19 @@
  * Time: 14:27
  *
  */
+
+require_once __DIR__ . '/../../vendor/autoload.php';
+
+$config = require_once __DIR__ . '/config.php';
+
+$app =  new \Turbine\Application($config['app']);
+
+foreach($config['provider'] as $provider){
+        $app->register(new $provider);
+}
+
+$response = $app->handle(\Zend\Diactoros\ServerRequestFactory::fromGlobals());
+echo $response->getBody();
+
+$app->terminate($app->getRequest(), $response);
+

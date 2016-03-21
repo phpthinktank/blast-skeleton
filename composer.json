@@ -3,12 +3,13 @@
   "description": "Examples for develop with blast components",
   "autoload": {
     "psr-4": {
-      "WebAppExample\\": "/example-webapp/app/src/"
+      "WebAppExample\\": "example-webapp/app/src"
     }
   },
   "require": {
     "blast/orm": "~0.5",
-    "blast/turbine": "~1.0"
+    "blast/turbine": "~1.0",
+    "league/plates": "~3.1"
   },
   "license": "MIT",
   "authors": [
