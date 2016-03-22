@@ -16,21 +16,49 @@ namespace WebAppExample\Helper;
 
 class InputHelper
 {
+    private $input;
 
     /**
-     * Returns filtered input array with given array keys
+     * InputHelper constructor.
+     * @param $input
+     */
+    public function __construct($input)
+    {
+        $this->input = $input;
+    }
+
+
+    /**
+     * Returns all entries. Optional filter input with given keys. You could
+     * also set a default value for unknown key values.
      *
-     * @param array $input
      * @param array $keys
      * @param null $default
      * @return array
      */
-    public static function filterInputByKeys(array $input, array $keys, $default = null){
+    public function all(array $keys = [], $default = null){
+        if(empty($keys)){
+            return $this->input;
+        }
+
         $result = [];
+
         foreach($keys as $key){
-            $result[$key] = isset($input[$key]) ? $input[$key] : $default;
+            $result[$key] = $this->get($key, $default);
         }
         return $result;
+    }
+
+    /**
+     * Get entry by name
+     *
+     * @param $key
+     * @param $default
+     * @return mixed
+     */
+    public function get($key, $default = null)
+    {
+        return isset($this->input[$key]) ? $this->input[$key] : $default;
     }
 
 }

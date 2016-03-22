@@ -19,14 +19,8 @@ $app = new \Turbine\Application($config['app']);
 // emulate http request from cli for testing
 // convert uri={path} into $_SERVER['REQUEST_URI];
 if ($app->isCli()) {
-    $uri = '/';
-    foreach ($argv as $var) {
-        if (0 === strpos(trim($var), 'uri=')) {
-            $uri = substr($var, 4, strlen($var));
-            break;
-        }
-    }
-    $_SERVER['REQUEST_URI'] = $uri;
+    $helper = new \WebAppExample\Helper\CliArgsHelper($argv);
+    $_SERVER['REQUEST_URI'] = $helper->get('uri', '/');
 }
 
 // register all providers from configuration

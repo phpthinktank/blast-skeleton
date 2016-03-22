@@ -79,7 +79,7 @@ class PostController
     public function getEntry(ServerRequestInterface $request, ResponseInterface $response)
     {
 
-        $input = InputHelper::filterInputByKeys(
+        $input = InputHelper::all(
             $request->getQueryParams(),
             ['id', 'slug']
         );
@@ -112,11 +112,11 @@ class PostController
     public function postEntry(ServerRequestInterface $request, ResponseInterface $response)
     {
 
+        $helper = new InputHelper($request->getParsedBody());
         $provider = new Provider($this->repository->getEntity());
         $id = $this->repository->save(
             $provider->withData(
-                InputHelper::filterInputByKeys(
-                    $request->getParsedBody(),
+                $helper->all(
                     ['id', 'title', 'content', 'slug']
                 )
             )
@@ -135,7 +135,7 @@ class PostController
      */
     public function deleteEntry(ServerRequestInterface $request, ResponseInterface $response)
     {
-        $input = InputHelper::filterInputByKeys(
+        $input = InputHelper::all(
             $request->getParsedBody(), ['id']
         );
 

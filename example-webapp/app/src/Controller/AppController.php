@@ -31,7 +31,13 @@ class AppController
         $this->template = $template;
     }
 
-
+    /**
+     * Get app index
+     *
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
+     */
     public function getIndex(ServerRequestInterface $request, ResponseInterface $response)
     {
         $response->getBody()->write($this->template->render('index', [
