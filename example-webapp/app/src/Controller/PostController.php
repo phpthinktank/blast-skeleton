@@ -45,9 +45,22 @@ class PostController
         $this->engine = $engine;
     }
 
+    /**
+     * Get a list of all posts
+     *
+     * @param ServerRequestInterface $request
+     * @param ResponseInterface $response
+     * @return ResponseInterface
+     */
     public function getIndex(ServerRequestInterface $request, ResponseInterface $response)
     {
-        $response->getBody()->write('My Post Content');
+        $response->getBody()->write($this->engine->render('post::index',
+            [
+                'headline' => 'Posts',
+                'posts' => $this->repository->all()
+            ]
+        ));
+
         return $response;
     }
 

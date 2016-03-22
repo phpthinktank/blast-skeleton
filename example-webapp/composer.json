@@ -3,7 +3,7 @@
   "description": "Examples for develop with blast components",
   "autoload": {
     "psr-4": {
-      "WebAppExample\\": "example-webapp/app/src"
+      "WebAppExample\\": "app/src"
     }
   },
   "require": {

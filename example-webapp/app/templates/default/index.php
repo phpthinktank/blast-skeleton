@@ -10,7 +10,7 @@
  * Time: 17:05
  *
  */
-$this->layout('layout/default', ['title' => 'User Profile']) ?>
+$this->layout('layout/default', ['title' => 'Index']) ?>
 
 <h1><?= $this->e($headline); ?></h1>
 <p><?= $this->e($content); ?></p>
