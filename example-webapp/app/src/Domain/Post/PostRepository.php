@@ -26,6 +26,11 @@ class PostRepository extends AbstractRepository
      */
     public function getEntity()
     {
-        return Post::class;
+        return PostEntity::class;
+    }
+
+    public function findBySlug($slug){
+        $query = $this->createMapper($this->getEntity())->select();
+        return $query->where($query->expr()->eq('slug', $slug))->setMaxResults(1)->execute();
     }
 }

@@ -23,7 +23,7 @@ use Turbine\ApplicationInterface;
 use WebAppExample\Controller\PostController;
 use WebAppExample\Domain\Post\PostRepository;
 
-class PostService extends AbstractServiceProvider implements BootableServiceProviderInterface
+class PostProvider extends AbstractServiceProvider implements BootableServiceProviderInterface
 {
 
     /**

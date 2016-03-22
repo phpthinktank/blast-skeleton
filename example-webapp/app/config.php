@@ -13,8 +13,8 @@
 
 return [
     'provider' => [
-        \WebAppExample\Provider\AppService::class,
-        \WebAppExample\Provider\PostService::class
+        \WebAppExample\Provider\AppProvider::class,
+        \WebAppExample\Provider\PostProvider::class
     ],
     'app' => [
 

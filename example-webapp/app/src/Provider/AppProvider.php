@@ -21,9 +21,8 @@ use League\Plates\Engine;
 use Turbine\Application;
 use Turbine\ApplicationInterface;
 use WebAppExample\Controller\AppController;
-use WebAppExample\Controller\PostController;
 
-class AppService extends AbstractServiceProvider implements BootableServiceProviderInterface
+class AppProvider extends AbstractServiceProvider implements BootableServiceProviderInterface
 {
 
     /**

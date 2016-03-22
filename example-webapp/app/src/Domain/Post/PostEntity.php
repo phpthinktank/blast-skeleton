@@ -19,7 +19,7 @@ namespace WebAppExample\Domain\Post;
  *
  * @package WebAppExample\Domain\Post
  */
-class Post
+class PostEntity
 {
 
     /**
@@ -49,7 +49,7 @@ class Post
 
     /**
      * @param mixed $id
-     * @return Post
+     * @return PostEntity
      */
     public function setId($id)
     {
@@ -67,7 +67,7 @@ class Post
 
     /**
      * @param mixed $title
-     * @return Post
+     * @return PostEntity
      */
     public function setTitle($title)
     {
@@ -85,7 +85,7 @@ class Post
 
     /**
      * @param mixed $content
-     * @return Post
+     * @return PostEntity
      */
     public function setContent($content)
     {
@@ -103,7 +103,7 @@ class Post
 
     /**
      * @param mixed $slug
-     * @return Post
+     * @return PostEntity
      */
     public function setSlug($slug)
     {

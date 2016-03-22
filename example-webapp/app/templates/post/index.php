@@ -16,7 +16,7 @@ $this->layout('layout/default', ['title' => $headline]) ?>
 <h1><?= $this->e($headline); ?></h1>
 <ul>
     <?php foreach($posts as $post):
-        if(!($post instanceof \WebAppExample\Domain\Post\Post)){
+        if(!($post instanceof \WebAppExample\Domain\Post\PostEntity)){
             continue;
         }
     ?>
